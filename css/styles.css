@@ -1,0 +1,770 @@
+/* Configuración General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #ffffff;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* Variables*/
+
+:root {
+    --primary: #0d9488;
+    --primary-dark: #0f766e;
+    --secondary: #f59e0b;
+    --dark: #12343b;
+    --text: #4b5563;
+    --light: #f4f8f8;
+    --white: #ffffff;
+
+    --container: 1200px;
+}
+
+
+/* Contenedor */
+
+.section {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 90px 25px;
+}
+
+
+/*NAVBAR*/
+
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: var(--container);
+    margin: 0 auto;
+
+    min-height: 70px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--dark);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   HERO
+================================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.48)
+        ),
+        url("../img/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    padding: 40px 25px;
+
+    text-align: center;
+    color: white;
+}
+
+.subtitle,
+.section-subtitle {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 15px 0;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.05;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--secondary);
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ==============================
+   BOTONES
+================================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s,
+        background-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    color: white;
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--dark);
+}
+
+
+/* ==============================
+   ENCABEZADOS DE SECCIÓN
+================================= */
+
+.section-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-header h2,
+.about-text h2,
+.contact-info h2 {
+    color: var(--dark);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.15;
+
+    margin: 10px 0 15px;
+}
+
+.section-header p:last-child {
+    color: var(--text);
+}
+
+
+/* Destinos */
+
+.destinations-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.destination-card {
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.14);
+}
+
+.destination-image {
+    height: 230px;
+    overflow: hidden;
+}
+
+.destination-image img {
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.4s;
+}
+
+.destination-card:hover img {
+    transform: scale(1.06);
+}
+
+.destination-content {
+    padding: 25px;
+}
+
+.country {
+    color: var(--primary);
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.destination-content h3 {
+    margin: 5px 0 10px;
+
+    color: var(--dark);
+
+    font-size: 1.5rem;
+}
+
+.destination-content p {
+    color: var(--text);
+
+    margin-bottom: 20px;
+}
+
+.card-link {
+    color: var(--primary);
+
+    font-weight: 800;
+}
+
+.card-link:hover {
+    color: var(--primary-dark);
+}
+
+
+/* Paquetes */
+
+.packages-section {
+    max-width: none;
+
+    background-color: var(--light);
+}
+
+.packages-section > * {
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.packages-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.package-card {
+    position: relative;
+
+    background-color: white;
+
+    padding: 35px 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.package-card h3 {
+    color: var(--dark);
+    font-size: 1.5rem;
+}
+
+.package-description {
+    color: var(--text);
+
+    margin: 15px 0;
+}
+
+.price {
+    color: var(--primary);
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    margin: 20px 0;
+}
+
+.package-card ul {
+    margin-bottom: 25px;
+}
+
+.package-card li {
+    color: var(--text);
+
+    margin: 8px 0;
+}
+
+.featured {
+    border: 3px solid var(--secondary);
+}
+
+.featured-label {
+    position: absolute;
+
+    top: -14px;
+    right: 20px;
+
+    background-color: var(--secondary);
+
+    color: white;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+
+/* Nosotros */
+
+.about-section {
+    background-color: var(--dark);
+    color: white;
+}
+
+.about-content {
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding: 90px 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-text h2 {
+    color: white;
+}
+
+.about-text > p:not(.section-subtitle) {
+    color: #d1d5db;
+
+    margin-bottom: 20px;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.benefit {
+    display: flex;
+    gap: 20px;
+
+    padding: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+}
+
+.benefit h3 {
+    margin-bottom: 5px;
+}
+
+.benefit p {
+    color: #d1d5db;
+}
+
+
+/* Contacto */
+
+.contact-section {
+    padding: 90px 25px;
+
+    background-color: #f8fafc;
+}
+
+.contact-container {
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.contact-info h2 {
+    margin-top: 10px;
+}
+
+.contact-info > p:last-child {
+    color: var(--text);
+}
+
+.travel-form {
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    color: var(--dark);
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 15px;
+
+    font-weight: 700;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #0b2429;
+    color: white;
+}
+
+.footer-content {
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding: 60px 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer p {
+    color: #b9c5c7;
+
+    margin-top: 10px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.social-links a {
+    color: #b9c5c7;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    padding: 20px 25px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    font-size: 0.85rem;
+}
+
+
+/* Tableta */
+
+@media (max-width: 900px) {
+
+    .destinations-grid,
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        gap: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* Telefono */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: white;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        box-shadow:
+            0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav-menu a {
+        display: block;
+
+        padding: 15px 25px;
+    }
+
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .destinations-grid,
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-content {
+        padding: 65px 20px;
+    }
+
+    .contact-section {
+        padding: 65px 20px;
+    }
+
+    .travel-form {
+        padding: 25px 20px;
+    }
+
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+}
